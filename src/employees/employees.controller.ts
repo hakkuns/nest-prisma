@@ -13,6 +13,7 @@ export class EmployeesController {
   @Get('')
   async employees(@Req() request: Request) {
     try {
+      console.log(request.cookies);
       const cookie = request.cookies['jwt'];
       const data = await this.jwtService.verifyAsync(cookie);
 
